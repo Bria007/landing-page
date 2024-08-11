@@ -1,27 +1,121 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  header, footer, main {
+    border: 3px solid red;
+  }
+
+  picture {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none; 
+  }
+
+  p a, li a {
+    display: inline-block;
+    color:blue;
+    text-decoration: underline;
+  }
+
+  /*Settings */
+  html {
+    --color: magenta; 
+  }
+
+   /*Dev styles */
+   /*body * {
+    border: 1px solid blue;
+    padding: 2px;
+  } */
+
+  /* structure */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  .inner-column {
+    display: block;
+    border: 8px solid;
+    border-color:orange;
+    padding: 10px;
+    width: 98%;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+ 
+  section {
+    border: 4x;
+    border-style: solid;
+    border-color: lime;
+  }
+
+  /* Typography */
+
+.loud-voice {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: .9;
+  }
+
+.calm-voice {
+    font-size: 1rempx;
+    font-weight: 700;
+    line-height: .9;
 }
 
-.header {
+
+
+  /* components */
+.button {
+    display: inline-block;
+    background-color: var(--color);
     color: white;
-    background-color: rgb(50, 50, 131);
-
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 6px;
 }
 
 
-.headertop {
-    display: flex;
-    justify-content: space-between;
+  /* Modules */
+  graphic-dip {
+    display: block;
+    border: 4px solid dodgerblue;
+  }
 
-}
+  graphic-dip text-content{
+    display: block;
+  }
 
-ul {
-    display: flex;
-    list-style: none;
-}
+@media (min-width: 700px) {
+    graphic-dip {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 20px;
+    }
+    graphic-dip :is(text-content, picture) {
+        flex-basis:50%;
+        border: 1px solid blue;
+    }
 
-a {
-    text-decoration: none;
-    color:white;
 }
